@@ -118,14 +118,6 @@ bool DoubleGameScene::init()
 	//GOLD->setScale(initScale);
 	this->addChild(GOLD, 3);
 
-
-	//ntimeboard = Label::createWithTTF("3", "fonts/Marker Felt.ttf", 88);
-
-	//ntimeboard->setPosition(Vec2(origin.x + visibleSize.width / 2,
-	//	origin.y + visibleSize.height - ntimeboard->getContentSize().height - 150));
-	//GOLD->setScale(initScale);
-	//this->addChild(ntimeboard, 3);
-
 	gameover = Label::createWithTTF("GAME OVER", "fonts/Marker Felt.ttf", 150);
 
 	gameover->setPosition(Vec2(origin.x + visibleSize.width / 2,
@@ -149,19 +141,6 @@ bool DoubleGameScene::init()
 		origin.y + visibleSize.height - waveboard->getContentSize().height));
 	this->addChild(waveboard, 3); //highest Z-Coordinate level
 
-
-								  //*********************************
-// add listener!!
-	/*
-	auto listener123 = EventListenerTouchOneByOne::create();
-
-	listener123->setSwallowTouches(true);
-	listener123->onTouchBegan = CC_CALLBACK_2(SingleGameScene::touchToBuild, this);
-
-	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority
-		(listener123, this);
-
-*/
 	resetFrames(group);
 	scheduleUpdate();
 	return true;
@@ -637,23 +616,6 @@ void DoubleGameScene::update(float dt)
 	Guest_monsterAttack();
 	Guest_towerAttack();
 
-/*	
-	//add the singleGame score part
-	if (currentFrameIndex % 60 == 0 && ntime>0)
-	{
-		ntime--;
-		sprintf(ntimearr, "%d", ntime);
-		ntimeboard->setString(ntimearr);
-		ntimeboard->setVisible(true);
-	}
-
-
-
-	if (ntime == 0)
-	{
-		ntimeboard->setVisible(false);
-	}
-*/
 	if (hitpoint == 0)
 	{
 		Size visibleSize = Director::getInstance()->getVisibleSize();
@@ -808,34 +770,6 @@ void DoubleGameScene::update(float dt)
 
 	}
 
-
-
-	/*
-	//Update the Vector if some monsters die
-	int size_hm = HsoldierVector.size();
-	for (int i = size_hm - 1; i >= 0; i--)
-	{
-		if (HsoldierVector.at(i)->isDead())
-		{
-			HsoldierVector.erase(i);
-			//add send
-			if (HOST)
-			{
-				std::string killSold = "-100.0 " + std::to_string(i);
-				sprintf(sendBuf, killSold.c_str(), inet_ntoa(addrClient.sin_addr));
-				send(_client, sendBuf, strlen(sendBuf) + 1, 0);
-				sendBuf[0] = 0;
-			}
-
-			else
-			{
-				std::string killSold = "-100.0 " + std::to_string(i);
-				send(sockClient, killSold.c_str(), strlen(killSold.c_str()) + 1, 0);
-			}
-		}
-
-	}
-	*/
 	if (wantDeleteS)
 	{
 		GsoldierVector.at(GDeleteS)->removeFromParent();
