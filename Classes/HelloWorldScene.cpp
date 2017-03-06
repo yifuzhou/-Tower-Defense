@@ -76,25 +76,6 @@ bool HelloWorld::init()
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority
 		(listener, this);
 
-
-	/*auto listen_start = EventListenerTouchOneByOne::create();
-	Rect rect = Rect(0 + 40, 0 + 30, size.width - 80, size.height / 3 + 15);
-	listen_start->onTouchBegan = [rect, this](Touch* t, Event* e)
-	{
-		log("click!");
-		if (rect.containsPoint(t->getLocation()))
-		{
-			log("click in area");
-			Director::getInstance()->replaceScene(TransitionFadeBL::create(1, Register::createScene()));
-		}
-			
-		return true;
-	};
-	Director::getInstance()->getEventDispatcher()->
-		addEventListenerWithSceneGraphPriority(listen_start, rect);
-
-		*/
-
     return true;
 }
 
