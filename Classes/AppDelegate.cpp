@@ -1,6 +1,5 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
-//#include"SingleGameScene_2.h"
 #include"SelectedScene.h"
 #include"HomeScene.h"
 
