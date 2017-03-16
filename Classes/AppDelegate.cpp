@@ -1,7 +1,7 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
-#include"SelectedScene.h"
-#include"HomeScene.h"
+//#include"SelectedScene.h"
+//#include"HomeScene.h"
 
 
 USING_NS_CC;
